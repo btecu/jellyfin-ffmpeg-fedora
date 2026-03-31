@@ -1,7 +1,7 @@
 # Upstream ffmpeg version
 %global ffmpeg_version 7.1.3
 # Jellyfin patchset release
-%global patchset_release 2
+%global patchset_release 4
 
 Name:           jellyfin-ffmpeg
 Version:        %{ffmpeg_version}
@@ -151,11 +151,19 @@ rm -r %{buildroot}/discard
 
 
 %changelog
-* Thu Feb 12 2026 Bj Tecu - 7.1.3-2.1
+* Thu Feb 31 2026 Bj Tecu - 7.1.3-4
+- Update to 7.1.3 and patchset release 4
+- https://github.com/jellyfin/jellyfin-ffmpeg/releases/tag/v7.1.3-4
+
+* Thu Feb 31 2026 Bj Tecu - 7.1.3-3
+- Update to 7.1.3 and patchset release 3
+- https://github.com/jellyfin/jellyfin-ffmpeg/releases/tag/v7.1.3-3
+
+* Thu Feb 12 2026 Bj Tecu - 7.1.3-2
 - Update to 7.1.3 and patchset release 2
 - https://github.com/jellyfin/jellyfin-ffmpeg/releases/tag/v7.1.3-2
 
-* Thu Dec 04 2025 Bj Tecu - 7.1.3-1.1
+* Thu Dec 04 2025 Bj Tecu - 7.1.3-1
 - Update to 7.1.3 and patchset release 1
 - https://github.com/jellyfin/jellyfin-ffmpeg/releases/tag/v7.1.3-1
 

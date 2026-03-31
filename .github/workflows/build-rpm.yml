@@ -37,7 +37,7 @@ jobs:
       - name: Build SRPM
         run: |
           mock \
-            -r fedora-${{ matrix.fedora_version }}-x86_64-rpmfusion_free \
+            -r fedora+rpmfusion_free-${{ matrix.fedora_version }}-x86_64 \
             --resultdir results-srpm \
             --buildsrpm \
             --sources . \
@@ -47,7 +47,7 @@ jobs:
       - name: Build RPM
         run: |
           mock \
-            -r fedora-${{ matrix.fedora_version }}-x86_64-rpmfusion_free \
+            -r fedora+rpmfusion_free-${{ matrix.fedora_version }}-x86_64 \
             --resultdir results-rpm \
             --rebuild results-srpm/*.src.rpm \
             --no-cleanup-after
