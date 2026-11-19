@@ -1,7 +1,7 @@
 # Upstream ffmpeg version
-%global ffmpeg_version 7.1.4
+%global ffmpeg_version 8.1.3
 # Jellyfin patchset release
-%global patchset_release 3
+%global patchset_release 2
 
 Name:           jellyfin-ffmpeg
 Version:        %{ffmpeg_version}
@@ -82,13 +82,17 @@ cat debian/patches/*.patch | patch -p1
     --bindir=%{_libexecdir}/%{name} \
     --target-os=linux \
     --extra-version=Jellyfin \
+    --disable-unstable \
     --disable-doc \
     --disable-ffplay \
     --disable-stripping \
     --disable-shared \
     --disable-libxcb \
-    --disable-sdl2 \
+    --disable-libxcb-shm \
+    --disable-libxcb-xfixes \
+    --disable-libxcb-shape \
     --disable-xlib \
+    --disable-sdl2 \
     --enable-lto \
     --enable-gpl \
     --enable-version3 \
@@ -120,6 +124,7 @@ cat debian/patches/*.patch | patch -p1
     --enable-libshaderc \
     --enable-libplacebo \
     --enable-vulkan \
+    --enable-vulkan-static \
     --enable-opencl \
     --enable-vaapi \
     --enable-amf \
@@ -151,6 +156,10 @@ rm -r %{buildroot}/discard
 
 
 %changelog
+* Wed Nov 18 2026 Bj Tecu - 8.1.3-2
+- Update to 8.1.3 and patchset release 2
+- https://github.com/jellyfin/jellyfin-ffmpeg/releases/tag/v8.1.3-2
+
 * Thu June 08 2026 Bj Tecu - 7.1.4-3
 - Update to 7.1.4 and patchset release 3
 - https://github.com/jellyfin/jellyfin-ffmpeg/releases/tag/v7.1.4-3
